@@ -154,7 +154,6 @@ df.drop(columns=col_non_num, inplace=True)
 print(df.shape)
 print(df.dtypes)
 print(df.head(10))
-# df = x.loc[:, ['age', 'enrollYear', 'progress']]
 # fill with mode, mean, or median
 df_mode, df_mean, df_median = df.mode().iloc[0], df.mean(), df.median()
 
@@ -167,7 +166,7 @@ dend = shc.dendrogram(shc.linkage(data, method='ward'))
 cluster = AgglomerativeClustering(n_clusters=5, affinity='euclidean', linkage='ward')
 cluster.fit_predict(data)
 print(f'labels are {cluster.labels_}')
-
+print(len(cluster.labels_))
 
 
 
